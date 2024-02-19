@@ -19,4 +19,4 @@ When reading the encryption file, we notice that six unique primes are not used 
 
 ***
 ### Flag 
-```picoCTF{1_gu3ss_tr1pl3_rs4_1snt_tr1pl3_s3cur3!!!!!!}```
+```picoCTF{pl33z_n0_g1v3_c0ngru3nc3_0f_5qu4r35_92fe3557}```
