@@ -13,10 +13,10 @@ We have so much faith in RSA we give you not just the product of the primes, but
 
 ## Solution
 
-Taking a look at the encryption, the plaintext ```flag``` is ecrupted encrypted using RSA, with the same public exponent $e=65537$, but has a different public key each time, $n_1,n_2,n_3$, respectively. 
+The difficulty in decrypting RSA comes from not knowing $\phi \left( n\right)=\left(p-1\right)\cdot\left(q-1\right)$ since it is impossible to find $p,q$ or $p-1,q-1$ from $n=p\cdot q$. Yet, in this problem we are also given $x=p+q$ which, other than providing us with a more efficiet way of factoring $n$, we can entirely skip the step of finding $p,q$ and directly find $\phi\left(n\right)=\left(p-1\right)\cdot\left(q-1\right)=p\cdot q-\left(p+q\right)+1=n-x+1$.
 
-When reading the encryption file, we notice that six unique primes are not used to generate the public keys, rather three is used, where each prime is used twice. This removed the difficulty of factoring the public keys, rather we can take the greatest common denominator of two public keys, and find its common prime. After we find the prime $p,q,r$ we can calculate $\phi \left( n_1 \right),\phi \left( n_2 \right),\phi \left( n_3 \right)$, in turn we can calculate the mod inverse of $e$ for $n_1,n_2,n_3$, respectively. From here on, the problem is trivial, and taking the ciphertext to the power of the mod inverses will result in the plaintext.
+In turn we can calculate the mod inverse of $e=65537$ to find the private exponent $d$. From here on, the problem is trivial, and taking the ciphertext to the power of $d \mod n$  will result in the plaintext.
 
 ***
 ### Flag 
-```picoCTF{1_gu3ss_tr1pl3_rs4_1snt_tr1pl3_s3cur3!!!!!!}```
+```picoCTF{pl33z_n0_g1v3_c0ngru3nc3_0f_5qu4r35_92fe3557}```
